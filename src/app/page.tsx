@@ -7,11 +7,14 @@ export function ContextUnrelatedState() {
   const { unrelatedState, updateUnrelatedState } = useCountContext();
 
   return (
-    <div>
-      <button className="bg-blue-500" onClick={() => updateUnrelatedState()}>
+    <div className="flex flex-col gap-2">
+      <button
+        className="bg-blue-500 px-4 py-2 rounded-md"
+        onClick={() => updateUnrelatedState()}
+      >
         Increment unrelated state
       </button>
-      <div>{unrelatedState}</div>
+      <div className="text-2xl font-bold">{unrelatedState}</div>
     </div>
   );
 }
@@ -21,11 +24,14 @@ export function ContextCountState() {
   const { count, increment } = useCountContext();
 
   return (
-    <div>
-      <button className="bg-blue-500" onClick={() => increment()}>
+    <div className="flex flex-col gap-2">
+      <button
+        className="bg-blue-500 px-4 py-2 rounded-md"
+        onClick={() => increment()}
+      >
         Increment
       </button>
-      <div>{count}</div>
+      <div className="text-2xl font-bold">{count}</div>
     </div>
   );
 }
@@ -39,11 +45,14 @@ export function ZustandUnrelatedState() {
   );
 
   return (
-    <div>
-      <button className="bg-blue-500" onClick={() => updateUnrelatedState()}>
+    <div className="flex flex-col gap-2">
+      <button
+        className="bg-blue-500 px-4 py-2 rounded-md"
+        onClick={() => updateUnrelatedState()}
+      >
         Increment unrelated state
       </button>
-      <div>{unrelatedState}</div>
+      <div className="text-2xl font-bold">{unrelatedState}</div>
     </div>
   );
 }
@@ -54,25 +63,32 @@ export function ZustandCountState() {
   const increment = useCounterStore((state) => state.increment);
 
   return (
-    <div>
-      <button className="bg-blue-500" onClick={() => increment()}>
+    <div className="flex flex-col gap-2">
+      <button
+        className="bg-blue-500 px-4 py-2 rounded-md"
+        onClick={() => increment()}
+      >
         Increment
       </button>
-      <div>{count}</div>
+      <div className="text-2xl font-bold">{count}</div>
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div>
-      <h1>Context</h1>
-      <ContextCountState />
-      <ContextUnrelatedState />
-      <hr />
-      <h1>Zustand</h1>
-      <ZustandCountState />
-      <ZustandUnrelatedState />
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Context</h1>
+      <div className="flex flex-col items-start gap-4">
+        <ContextCountState />
+        <ContextUnrelatedState />
+      </div>
+      <hr className="my-4" />
+      <h1 className="text-2xl font-bold">Zustand</h1>
+      <div className="flex flex-col items-start gap-4">
+        <ZustandCountState />
+        <ZustandUnrelatedState />
+      </div>
     </div>
   );
 }
