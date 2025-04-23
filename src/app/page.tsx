@@ -3,7 +3,7 @@ import { useCountContext } from "./context/CountContext";
 import { useCounterStore } from "./stores/CounterStore";
 
 export function ContextUnrelatedState() {
-  console.log("ContextUnrelatedState rendered !");
+  console.log("ContextUnrelatedState function rendered !");
   const { unrelatedState, updateUnrelatedState } = useCountContext();
 
   return (
@@ -20,7 +20,7 @@ export function ContextUnrelatedState() {
 }
 
 export function ContextCountState() {
-  console.log("ContextCountState rendered !");
+  console.log("ContextCountState function rendered !");
   const { count, increment } = useCountContext();
 
   return (
@@ -38,7 +38,7 @@ export function ContextCountState() {
 
 // Zustand
 export function ZustandUnrelatedState() {
-  console.log("ZustandUnrelatedState rendered !");
+  console.log("ZustandUnrelatedState function rendered !");
   const unrelatedState = useCounterStore((state) => state.unrelatedState);
   const updateUnrelatedState = useCounterStore(
     (state) => state.updateUnrelatedState
@@ -58,7 +58,7 @@ export function ZustandUnrelatedState() {
 }
 
 export function ZustandCountState() {
-  console.log("ZustandCountState rendered !");
+  console.log("ZustandCountState function rendered !");
   const count = useCounterStore((state) => state.count);
   const increment = useCounterStore((state) => state.increment);
 
