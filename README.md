@@ -84,4 +84,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-## Go to the console logs and have a look at which function re-renders and which function do not.
+## Go to the console logs and have a look at which function re-renders and which functions do not.
